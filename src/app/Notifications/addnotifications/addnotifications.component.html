@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title>
+        <mat-card-title>
+            <div *ngIf="!notification">Add Notifications</div>
+        <div *ngIf="notification">Update Notification</div>
+            
+        </mat-card-title>
+    </mat-card-title>
+    <mat-card-content>
+        <form  [formGroup]="regiForm" (ngSubmit)="onSubmit(regiForm.value)">
+            <table class="table">
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <input formControlName="aheading" matInput name="aheading" placeholder="Heading">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!regiForm.get('aheading').valid && regiForm.get('aheading').touched">
+                                    Please enter the Heading .
+                            </span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <textarea  formControlName="content" matInput name="content" matTextareaAutosize matAutosizeMinRows="2"
+                            matAutosizeMaxRows="5" placeholder="Content"></textarea>
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!regiForm.get('content').valid && regiForm.get('content').touched">
+                                    Please enter the Content .
+                            </span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="content-center">
+                        <button mat-raised-button [disabled]="!regiForm.valid"  color="accent">Submit</button>
+                    </td>
+                </tr>
+
+
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>

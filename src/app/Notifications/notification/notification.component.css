@@ -1,0 +1,39 @@
+div.background {
+    background-color:white;
+    border: 2px solid black;
+  }
+  
+  div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+  }
+  
+  div.topRightShadowBlur p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+  }
+  .topRightShadowBlur
+{
+  margin: 30px;
+  
+  border: solid 1px #555;
+  background-color: rgb(199, 222, 243);
+  box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+}
+.fade-in{
+  animation:fadeIn 6s;
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

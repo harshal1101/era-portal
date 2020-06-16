@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://accounts.scdn.co/css/index.48778854b2fbc42ce2ee.css" media="screen" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <script>
+            import { Component } from '@angular/core';
+            import { AngularFirestore } from '@angular/fire/firestore';
+            import { AngularFireAuth } from '@angular/fire/auth';
+            import { auth } from 'firebase/app';
+          
+            </script>
+<!--<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />-->
+    </head>
+    <body>
+
+      
+        <div *ngIf="auth.user$ | async; then authenticated else guest">
+          <!-- template will replace this div -->
+        </div>
+      
+      <ng-template #guest>
+        <div class="Login">
+            <div class="w3-center w3-black">
+                <img src="assets/1.PNG" style="max-height:150px; align:middle;">
+            </div>
+            <br>
+            <h4 class="w3-center"><b>To Continue </b></h4>
+            <p></p>
+            <hr> 
+            <p></p>
+            <div class="w3-container w3-center">
+              
+              
+                <button (click)="auth.faceSignin()" class="btn btn-block btn-facebook facebook"  style="font-size:14px; text-align: center;  background-color: #3b5998; color:#fff; " >
+                     Login through Facebook   
+                </button>
+                <br>
+                <button (click)="auth.googleSignin()"  class="btn btn-block btn-google google" style="font-size:14px;text-align: center; background-color:#000;color:#fff">Login With Google</button>
+
+            </div>
+            <div class="col-xs-12 row ">
+                <div class="divider" style="margin:7px 239px; padding:14px 14px 18px">
+                    <!-- ngIf: showOrLabel -->
+                </div>
+            </div>		
+            
+            <br>
+            <div class=" text-center mt-0">
+                <div class="h4 ng-binding">Don't have an account?</div>
+
+
+            </div>
+            <div class="w3-container w3-center">
+              
+                <button  type="submit" class="btn btn-block btn-signup " style="font-size: 14px;"   name="signup" value="signup">SIGN UP</button>
+                      
+            </div>
+        </div> 
+        <!--footer-->
+        <footer id="contact" class="sm-padding" style="background-color: black;">
+
+            <!-- Container -->
+            <div class="container">
+          
+              <!-- Row -->
+              <div class="row">
+          
+                <div class="section-header text-center">
+                  <h2 class="title" style="color:white ; font-size: 235%;margin: center; display: block;">Contact us</h2>
+                </div>
+              
+                <div class="col-md-12">
+          
+                  <!-- footer logo -->
+                  <div class="footer-logo">
+                    <a href="#"><img src="/assets/era.png" alt="logo" style="margin:auto; display: block;"></a>
+                  </div>
+                  <!-- /footer logo -->
+                  <!-- footer follow -->
+                  <ul class="footer-follow" style="font-size: 48px;display: block;margin:auto">
+                    <li><a href="https://www.facebook.com/eraiitkanpur/" target="_blank" wrc_done="true"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.github.com/ERA-IITK" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="mailto:eraiitk@gmail.com"><i class="fa fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/company/era-iitk/" target="_blank"><i class="fa fa-linkedin" target="_blank"></i></a>
+                    <a href="https://www.youtube.com/channel/UCaaEga5jSCEN6ph6w9E9TVQ" wrc_done="true"><i class="fa fa-youtube" target="_blank"></i></a></li>
+                  </ul>
+                  <!-- /footer follow -->
+          
+                </div>
+          
+              </div>
+              <!-- /Row -->
+          
+            </div>
+            <!-- /Container -->
+          
+          </footer>
+</ng-template>
+  
+
+
+    
+    
+    <!-- User logged in -->
+    <ng-template #authenticated >
+      <div class = "bset" [ngStyle]="{backgroundImage:'url(./assets/dashboard-bg.jpg)'}">
+    <div  *ngIf="auth.user$ | async as user" >
+     <br>
+     
+     
+        <div class="container" id ="togbutton" (click)="myFunction()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        
+      <nav id ="navi">
+        
+        <ul>
+          <li><a href = "#"> HOME </a></li>
+          <li><a href = "#"> ABOUT  </a></li>
+          <li><a href = "#"> SERVICES </a></li>
+          <li><a href = "#"> CONTACT </a></li>
+          <li><a href = "#"> MORE </a></li>
+          
+    
+    
+        </ul>
+      </nav>
+      <h1 style = "color: #fff;"><u>Dashboard</u></h1>
+      <h3 style="color:whitesmoke">Hello, {{ user.displayName }}</h3>
+      <div>
+      <img class="user-p" [src]="user.photoURL">
+      <p>UID: {{ user.uid }}</p>
+      <br>
+      
+      <i class="fa fa-envelope" style="font-size:24px; color: whitesmoke;"></i>
+      <p class = "email">{{user.email}}</p>
+      </div>
+      <br>
+      <button class = "edit" (click)="onClickMe()" >Edit </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class = "logout" (click)="auth.signOut()">Logout</button>
+    </div>
+    
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class = "hey">
+        <div class = "form" id = "user-name"  *ngIf="auth.user$ | async as user">
+            
+            <input  id ="namet" type = "text" autocomplete = "off"  name ="name"  required  /> 
+        <label for = "name" class= "label-name">
+            <span id  = "i-name"class= "content-name">Name</span>
+        </label>
+        
+        </div>
+        
+        <div class = "forma" id ="user-email">
+            
+            <input id= "emailt" type = "text" autocomplete = "off"  name ="namea" required />
+        <label for = "namea" class= "label-namea">
+            <span class= "content-namea">Email</span>
+        </label>
+        </div>
+        <div class = "formb" id = "clg-name">
+            
+          <input id= "clg-namet" type = "text" autocomplete = "off"  name ="nameb" required />
+      <label for = "nameb" class= "label-nameb">
+          <span id  = "i-clgname" class= "content-nameb">College Name</span>
+      </label>
+      </div>
+      
+      <div class = "formc" id = "clg-city">
+          
+          <input id = "clg-cityt" type = "text" autocomplete = "off"  name ="namec" required />
+      <label for = "namec" class= "label-namec">
+          <span class= "content-namec">College City</span>
+      </label>
+      </div>
+        
+        </div>
+        
+        <div class="card-body" id = "choose-file">
+        <input type="file" id = "chosen" accept=".png,.jpg" namr = "fileu" />
+        <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+          <img [src]  = "(downloadURL | async)">
+        </div>-
+       <button  (click)="ch()" >update</button>{{kMessage}}
+       
+        </div>
+        <p id="demo"></p>
+        <script type="text/javascript" >
+         
+         </script>
+         </div>
+    </ng-template>
+    <!--<ng-template #authenticated ><app-dashboard></app-dashboard></ng-template>-->
+  
+    </body>
+    </html>
+    

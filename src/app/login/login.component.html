@@ -1,0 +1,384 @@
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="login.component.css">
+        <link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://accounts.scdn.co/css/index.48778854b2fbc42ce2ee.css" media="screen" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+        
+    </head>
+    <body>
+      <div *ngIf="auth.user$ | async; then authenticated else guest">
+        <!-- template will replace this div -->
+      </div>
+      <ng-template #guest>
+        <div class="Login">
+            <div class="w3-center w3-black">
+                <img src="assets/1.PNG" style="max-height:150px; align:middle;">
+            </div>
+            <br>
+            <h4 class="w3-center"><b>To Continue </b></h4>
+            <p></p>
+            <hr> 
+            <p></p>
+            <div class="w3-container w3-center">
+              
+              
+                <button (click)="auth.faceSignin()" class="btn btn-block btn-facebook facebook"  style="font-size:14px; text-align: center;  background-color: #3b5998; color:#fff; " >
+                     Sign in through Facebook   
+                </button>
+                <br>
+                <button (click)="auth.googleSignin()" class="btn btn-block btn-google google" style="font-size:14px;text-align: center; background-color:#000;color:#fff">Sign in With Google</button>
+
+            </div>
+            <div class="col-xs-12 row ">
+                <div class="divider" style="margin:7px 239px; padding:14px 14px 18px">
+                    <!-- ngIf: showOrLabel -->
+                </div>
+            </div>		
+            
+            <br>
+            <div class=" text-center mt-0">
+                <div class="h4 ng-binding"></div>
+
+
+            </div>
+            <div class="w3-container w3-center">
+              
+                <!--<button  type="submit" class="btn btn-block btn-signup " style="font-size: 14px;"   name="signup" value="signup">SIGN UP</button>-->
+                      
+            </div>
+        </div> 
+        <!--footer-->
+<footer id="contact" class="sm-padding" style="background-color: black;">
+
+    <!-- Container -->
+    <div class="container">
+  
+      <!-- Row -->
+      <div class="row">
+  
+        <div class="section-header text-center">
+          <h2 class="title" style="color:white ; font-size: 235%;margin: center; display: block;">Contact us</h2>
+        </div>
+      
+        <div class="col-md-12">
+  
+          <!-- footer logo -->
+          <div class="footer-logo">
+            <a href="#"><img src="/assets/era.png" alt="logo" style="margin:auto; display: block;"></a>
+          </div>
+          <!-- /footer logo -->
+          <!-- footer follow -->
+          <ul class="footer-follow" style="font-size: 48px;display: block;margin:auto">
+            <li><a href="https://www.facebook.com/eraiitkanpur/" target="_blank" wrc_done="true"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.github.com/ERA-IITK" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="mailto:eraiitk@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/era-iitk/" target="_blank"><i class="fa fa-linkedin" target="_blank"></i></a>
+            <a href="https://www.youtube.com/channel/UCaaEga5jSCEN6ph6w9E9TVQ" wrc_done="true"><i class="fa fa-youtube" target="_blank"></i></a></li>
+          </ul>
+          <!-- /footer follow -->
+  
+        </div>
+  
+      </div>
+      <!-- /Row -->
+  
+    </div>
+    <!-- /Container -->
+  
+  </footer>
+      </ng-template>
+      <ng-template #authenticated >
+        <div class = "bset" [ngStyle]="{backgroundImage:'url(./assets/dashboard-bg.jpg)'}">
+      <div  *ngIf="auth.user$ | async as user" >
+       <br>
+       
+       
+          <div class="container" id ="togbutton" (click)="myFunction()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          
+        <nav id ="navi">
+          
+          <ul>
+            <li><a href = "#"> HOME </a></li>
+            <li><a href = "#"> ABOUT  </a></li>
+            <li><a href = "#"> SERVICES </a></li>
+            <li><a href = "#"> CONTACT </a></li>
+            <li><a href = "#"> MORE </a></li>
+            
+      
+      
+          </ul>
+        </nav>
+        <br>
+        <br>
+        <div class = "dashi">
+        <h1 class = "h1class" style = "color: #fff;"><u>Dashboard</u></h1>
+        <br>
+        <h3 class = "h3class" style="color:whitesmoke">Hello, {{ user.displayName }}</h3>
+        <div>
+        <img class="user-p" [src]="user.photoURL">
+        <!--<p>UID: {{ user.uid }}</p>-->
+        <br>
+        
+        <i class="fa fa-envelope" style="font-size:18px; color: whitesmoke;">&nbsp; <p class = "email">{{user.email}}</p></i>
+        
+       
+        </div>
+        <br>
+        <br>
+        <button class = "edit" (click)="onClickMe()" >Edit </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class = "logout" (click)="auth.signOut()">Logout</button>
+      
+      
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class = "hey">
+          <div class = "form" id = "user-name"  *ngIf="auth.user$ | async as user">
+              
+              <input  id ="namet" type = "text" autocomplete = "off"  name ="name" value = "{{user.displayName}}" readonly/>
+          <label for = "name" class= "label-name">
+            <br>
+              <span id  = "i-namezz"class= "content-namezz" >Name</span>
+          </label>
+          
+          </div>
+          
+          <div class = "forma" id ="user-email">
+              
+              <input id= "emailt" type = "text" autocomplete = "off"  name ="namea" value="{{user.email}}" readonly/>
+          <label for = "namea" class= "label-namea">
+            <br>
+              <span class= "content-nameaz">Email</span>
+          </label>
+          </div>
+          <div class = "formb" id = "clg-name">
+              
+            <input id= "clg-namet" type = "text" autocomplete = "off"  name ="nameb" required />
+        <label for = "nameb" class= "label-nameb">
+            <span id  = "i-clgname" class= "content-nameb">College Name</span>
+        </label>
+        </div>
+        
+        <div class = "formc" id = "clg-city">
+            
+            <input id = "clg-cityt" type = "text" autocomplete = "off"  name ="namec" required />
+        <label for = "namec" class= "label-namec">
+            <span class= "content-namec">College City</span>
+        </label>
+        </div>
+          
+          </div>
+          <br>
+
+          <div class="card-body" id = "choose-file1">
+          <!--<input type="file" id = "chosen" accept=".png,.jpg" namr = "fileu" value  =  "Upload photo"/>-->
+          <div class="file btn btn-lg btn-primary" id = "choose-file">
+           
+            <input type="file"  id = "chosenz" accept=".png,.jpg" namr = "fileu" /> Change Profile Picture
+          </div>
+         <!-- <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+            <img [src]  = "(downloadURL | async)">
+          </div>-->
+          <br>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-dark" (click)="ch(); alertm()" id="butu" >update</button>{{kMessage}}
+          <!--<button type="button" class="btn btn-dark">Dark</button>-->
+
+          </div>
+        </div>
+       
+      <!--<div class="wrapperi">
+        <div class="card">
+          <h1>
+            <span class="enclosed">Reading</span>Material
+          </h1>
+        </div>
+      </div>
+      <div class="wrapper2">
+        <div class="card2">
+          <h1>
+            <span class="enclosed2">App</span>ly
+          </h1>
+        </div>
+      </div>-->
+      <div class="vl">&nbsp;&nbsp;</div>
+      
+      
+     <!-- <div class="carryminati">
+      <div class= "col-sm-6 col-sm-offset-3" [ngStyle]="{'background-color':'green'}">
+        <carousel [pauseOnFocus]="true" class = "text-center"  >
+          <slide>
+            <div class="merge">
+            <div class="wrapperi">
+              <div class="card">
+                <h1>
+                  <span class="enclosed">Reading</span>Material
+                </h1>
+              </div>
+            </div>
+            <div class="wrapperi">
+              <div class="card">
+                <h1>
+                  <span class="enclosed">APP</span>ly
+                </h1>
+              </div>
+            </div>
+          </div>
+            <div class="carousel-caption d-none d-md-block">
+            
+           
+            </div>
+          </slide>
+          <slide>
+            <img class = " setting"  src="assets/era.png" alt="Second slide" style="display: block; width: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </slide>
+          <slide>
+            <img  class = " setting" src="assets/bg.png" alt="Third slide" style="display: block; width: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third slide label</h3>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </slide>
+        </carousel>
+        </div>
+        </div>-->
+      <div class="carouselkk">
+        <div class= "col-sm-6 col-sm-offset-3"  >
+          <div class="carouselk">
+          <carousel [pauseOnFocus]="true" class = "text-center" >
+            <slide>
+          
+             <div class = "imgggg" [ngStyle]="{backgroundImage:'url(./assets/tech.jpg)'}">
+              <div class="merge"   >
+                
+                <br>
+                <div class ="Caption"><br><h2 class="tech" > Technical</h2></div>
+                <br>
+                <a href="http://www.google.com"><div class="wrapperi">
+                    
+                   <div class="card">
+                     <br>
+                     <h4>
+                       <span class="enclosed">Reading</span>Material
+                       
+                     </h4>
+                     <!--<button onclick="location.href='www.google.com'" type="button">
+                        </button>-->
+                        
+                   </div>
+                 </div></a>
+                 <br>
+                 <a href="http://www.google.com"><div class="wrapper2">
+                   <div class="card">
+                     <br>
+                     <h4>
+                       <span class="enclosed">APP</span>ly
+                     </h4>
+                   </div>
+                 </div></a>
+                 </div>
+             </div>
+              
+            
+            </slide>
+            <slide>
+              <div class = "imgggg" [ngStyle]="{backgroundImage:'url(./assets/webdev.png)'}">
+                <div class="merge"   >
+                  
+                  <br>
+                  <div class ="Caption"><br><h2 class="tech">Web-Development</h2></div>
+                  <br>
+                  <a href="http://www.google.com"><div class="wrapperi">
+                      
+                     <div class="card">
+                       <br>
+                       <h4>
+                         <span class="enclosed">Reading</span>Material
+                         
+                       </h4>
+                       <!--<button onclick="location.href='www.google.com'" type="button">
+                          </button>-->
+                          
+                     </div>
+                   </div></a>
+                   <br>
+                   <a href="http://www.google.com"><div class="wrapper2">
+                     <div class="card">
+                       <br>
+                       <h4>
+                         <span class="enclosed">APP</span>ly
+                       </h4>
+                     </div>
+                   </div></a>
+                   </div>
+               </div>
+            </slide>
+            <slide>
+              <div class = "imgggg" [ngStyle]="{backgroundImage:'url(./assets/marketing.jpg)'}">
+                <div class="merge"   >
+                  
+                  <br>
+                  <div class ="Caption"> <br><h2 class="tech"> Marketing</h2></div>
+                  <br>
+                  <a href="http://www.google.com"><div class="wrapperi">
+                      
+                     <div class="card">
+                       <br>
+                       <h4>
+                         <span class="enclosed">Reading</span>Material
+                         
+                       </h4>
+                       <!--<button onclick="location.href='www.google.com'" type="button">
+                          </button>-->
+                          
+                     </div>
+                   </div></a>
+                   <br>
+                   <a href="http://www.google.com"><div class="wrapper2">
+                     <div class="card">
+                       <br>
+                       <h4>
+                         <span class="enclosed">APP</span>ly
+                       </h4>
+                     </div>
+                   </div></a>
+                   </div>
+               </div>
+            </slide>
+          </carousel>
+          </div>
+          </div>
+          </div>
+  
+      
+  
+      
+    
+      </div>
+      
+           </div>
+         
+      </ng-template>
+      
+     
+  </body>
+ </html>
+    
+
+

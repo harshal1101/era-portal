@@ -1,0 +1,630 @@
+.btn {
+    padding: 16px 14px 18px;
+}
+.btn-facebook{
+    color: #fff;
+    background-color: #3b5998
+}
+.btn-block{
+    display: block;
+    width: 30%;
+    margin:auto;
+}
+.btn{
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    
+    
+    
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.btn-facebook {
+    padding-top: 14px;
+}
+.btn-facebook:hover{
+    background-color: cornsilk;
+}
+body {
+    font-family: circular-spotify-ui,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.btn  {
+    
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+   
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+}
+img{
+    vertical-align: middle;
+    border:0;
+    
+}
+.bg-dark{
+    background-color: #000;
+}
+.sm-padding{
+    padding-top: 60px ;
+    padding-bottom : 60px;
+}
+.container{
+    padding: 15px 0px;
+    margin-right:auto;
+    margin-left:auto;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.section-header{
+    position: relative;
+    margin-bottom: 60px;
+    
+}
+.text-center{
+    text-align: center;
+}
+div {
+    display: block;
+}
+.row:before {
+    
+    content: " ";
+}
+:before {
+    box-sizing: border-box;
+}
+::selection {
+    background-color: #6195FF;
+    color: #FFF;
+}
+.section-header {
+    position: relative;
+    margin-bottom: 60px;
+}
+.text-center {
+    text-align: center;
+}
+.white-text {
+    color: #FFF;
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.title:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #6195FF;
+   
+}
+.text-center .title:after {
+    margin: 20px auto 0px;
+}
+.col-md-12{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.footer-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.footer-follow {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-follow li a {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 3px;
+    
+    
+    transition: all 0.4s;
+}
+a {
+    background-color: transparent;
+}
+:after, :before {
+    
+    box-sizing: border-box;
+}
+
+ul {
+    
+     margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    display: block;
+    
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.section-header .title {
+    text-transform: capitalize;
+}
+@media only screen and (max-width: 767px){
+.section-header h2.title {
+    font-size: 31.5px;
+}
+}
+
+@media (min-width: 350px){
+ .btn-facebook {
+    padding-top: 14px;
+}
+}
+@media (min-width: 350px){
+.btn{
+    font-size: 9px;
+    line-height: 1;
+    border-radius: 500px;
+}
+}
+div{
+    display: block;
+}
+.col-xs-12 {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+.divider {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+nav{
+    background: #00FFFF;
+    height: 60px;
+    width:90%;
+   margin:  auto;
+   text-align: center;
+visibility: hidden;
+padding-top: 5px;
+   
+    border-radius: 50px;
+}
+nav ul
+{
+    padding-bottom: 20px;
+    margin-right: 20px;
+}
+nav ul li{
+    display:inline-block;
+   
+    line-height: 80px;
+    margin: -15px 50px;
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+.checkbtn{
+    font-size:30px;
+    color: white;
+    float: left;
+    line-height: 80px;
+    margin-left: 10px;
+    
+    cursor: pointer;
+}
+#check{
+    display:none;
+}
+.user-p
+{
+    border-radius: 50%;
+    object-fit:cover;
+   object-position:50% 50%;
+   height: 200px;
+   width: 200px;
+   image-rendering: high-quality;
+   float: left;
+   
+}
+u{
+text-decoration-color: orange;
+}
+/*.email
+{
+    
+    padding-left: 150px;
+}*/
+.fa-envelope
+{
+    float: left;
+    padding-left: 50px;
+   padding-right: 10px;
+    padding-top: 7px;
+}
+.edit
+{
+    float: left;
+   padding-left: 15px;
+   padding-right: 15px;
+    
+    
+    margin-left: 50px;
+    background-color: black;
+    color: whitesmoke;
+
+
+}
+.logout
+{
+    border:none;
+    background: none;
+    color: #FF6347;
+}
+/*#name
+{
+    
+    
+}*/
+
+.hey
+{
+    width:50%;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: 0px;
+    background-color: none;
+    
+}
+.form
+{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+    
+    
+    
+}
+.form input{
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    color: deeppink;
+    background: transparent;
+    
+}
+.form label {
+    position: absolute;
+    bottom:0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    color:deeppink;
+    
+}
+/*body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+
+
+}*/
+.form label::after{
+    content: "";
+    height:50%;
+    width:100%;
+    position: absolute;
+     border-bottom: 3px solid blue;
+     left: 0px;
+     bottom: -1px;
+     transform: translateX(-100%);
+     transition: transfom 0.3s ease;
+}
+.content-name{
+    position: absolute;
+    bottom:5px;
+    transition: all 0.3s ease;
+
+}
+.form input:focus + .label-name .content-name,
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: goldenrod;
+    
+    
+
+}
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after{
+    transform: translateX(0%);
+}
+.forma
+{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+   
+}
+.forma input{
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: deeppink;
+}
+.forma label {
+    position: absolute;
+    bottom:0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    color: deeppink;
+    
+}
+/*body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+
+
+}*/
+.forma label::after{
+    content: "";
+    height:100%;
+    width:100%;
+    position: absolute;
+     border-bottom: 3px solid blue;
+     left: 0px;
+     bottom: -1px;
+     transform: translateX(-100%);
+     transition: transfom 0.3s ease;
+    
+}
+.content-namea{
+    position: absolute;
+    bottom:5px;
+    transition: all 0.3s ease;
+    border: none;
+    
+}
+.forma input:focus + .label-namea .content-namea,
+.forma input:focus + .label-namea .content-namea,
+.forma input:valid + .label-namea .content-namea
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: goldenrod;
+
+}
+.forma input:focus + .label-namea::after,
+.forma input:valid + .label-namea::after{
+    transform: translateX(0%);
+}
+
+.formb
+{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+.formb input{
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: deeppink;
+}
+.formb label {
+    position: absolute;
+    bottom:0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    color: deeppink;
+}
+/*body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+
+
+}*/
+.formb label::after{
+    content: "";
+    height:100%;
+    width:100%;
+    position: absolute;
+     border-bottom: 3px solid blue;
+     left: 0px;
+     bottom: -1px;
+     transform: translateX(-100%);
+     transition: transfom 0.3s ease;
+}
+.content-nameb{
+    position: absolute;
+    bottom:5px;
+    transition: all 0.3s ease;
+
+}
+.formb input:focus + .label-nameb .content-nameb,
+.formb input:focus + .label-nameb .content-nameb,
+.formb input:valid + .label-nameb .content-nameb
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: goldenrod;
+
+}
+.formb input:focus + .label-nameb::after,
+.formb input:valid + .label-nameb::after{
+    transform: translateX(0%);
+}
+.formc
+{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+.formc input{
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: deeppink;
+}
+.formc label {
+    position: absolute;
+    bottom:0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    color: deeppink;
+}
+/*body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+
+
+}*/
+.formc label::after{
+    content: "";
+    height:100%;
+    width:100%;
+    position: absolute;
+     border-bottom: 3px solid blue;
+     left: 0px;
+     bottom: -1px;
+     transform: translateX(-100%);
+     transition: transfom 0.3s ease;
+}
+.content-namec{
+    position: absolute;
+    bottom:5px;
+    transition: all 0.3s ease;
+
+}
+.formc input:focus + .label-namec .content-namec,
+.formc input:focus + .label-namec .content-namec,
+.formc input:valid + .label-namec .content-namec
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: goldenrod;
+
+}
+.formc input:focus + .label-namec::after,
+.formc input:valid + .label-namec::after{
+    transform: translateX(0%);
+}
+.edit-info
+{
+    visibility: hidden;
+}
+.email
+{
+    color: whitesmoke;
+}
+.logout:hover {
+    color: #9050AA;
+        background-color:#FF6347;
+        border-radius: 15px;
+  }
+  .bset
+  {
+opacity: 0.8;
+  }
+.card-body
+{
+    visibility: hidden;
+}
+.container {
+    display: inline-block;
+    cursor: pointer;
+    margin-left:5px;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:whitesmoke;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "rec1-9ef40"
+  },
+  "targets": {
+    "recruitment-95f0d": {
+      "hosting": {
+        "rec": [
+          "recruitment-95f0d"
+        ]
+      }
+    }
+  }
+}
